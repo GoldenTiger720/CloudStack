@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge"
+import { useTranslation } from "react-i18next"
 
 interface StatusIndicatorProps {
   status: "running" | "stopped" | "error" | "pending" | "warning"
@@ -7,6 +8,7 @@ interface StatusIndicatorProps {
 }
 
 export function StatusIndicator({ status, text, size = "default" }: StatusIndicatorProps) {
+  const { t } = useTranslation()
   const getStatusConfig = () => {
     switch (status) {
       case "running":
@@ -53,7 +55,7 @@ export function StatusIndicator({ status, text, size = "default" }: StatusIndica
   return (
     <Badge variant={config.variant} className={`inline-flex items-center gap-1.5 ${config.className}`}>
       <div className={`w-2 h-2 rounded-full ${config.dot}`} />
-      {text || status.charAt(0).toUpperCase() + status.slice(1)}
+      {text || t(`status.${status}`)}
     </Badge>
   )
 }

@@ -23,27 +23,32 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { useTranslation } from "react-i18next";
 
-const mainItems = [
-  { title: "Dashboard", url: "/", icon: Home },
-  { title: "Instances", url: "/instances", icon: Server },
-  { title: "Networks", url: "/networks", icon: Network },
-  { title: "Storage", url: "/storage", icon: HardDrive },
-];
-
-const managementItems = [
-  { title: "Users & Roles", url: "/users", icon: Users },
-  { title: "Security Groups", url: "/security", icon: Shield },
-  { title: "Monitoring", url: "/monitoring", icon: Activity },
-  { title: "Audit Logs", url: "/logs", icon: AlertTriangle },
-];
-
-const systemItems = [{ title: "Settings", url: "/settings", icon: Settings }];
 
 export function AppSidebar() {
+  const { t } = useTranslation();
   const { state } = useSidebar();
   const location = useLocation();
   const currentPath = location.pathname;
+
+  const mainItems = [
+    { title: t('navigation.dashboard'), url: "/", icon: Home },
+    { title: t('navigation.instances'), url: "/instances", icon: Server },
+    { title: t('navigation.networks'), url: "/networks", icon: Network },
+    { title: t('navigation.storage'), url: "/storage", icon: HardDrive },
+  ];
+
+  const managementItems = [
+    { title: t('navigation.users'), url: "/users", icon: Users },
+    { title: t('navigation.security'), url: "/security", icon: Shield },
+    { title: t('navigation.monitoring'), url: "/monitoring", icon: Activity },
+    { title: t('navigation.auditLogs'), url: "/logs", icon: AlertTriangle },
+  ];
+
+  const systemItems = [
+    { title: t('navigation.settings'), url: "/settings", icon: Settings }
+  ];
 
   const isCollapsed = state === "collapsed";
   const isActive = (path: string) => currentPath === path;
@@ -69,10 +74,10 @@ export function AppSidebar() {
             {!isCollapsed && (
               <div>
                 <h1 className="font-bold text-lg text-foreground">
-                  CloudStack
+                  {t('navigation.cloudstack')}
                 </h1>
                 <p className="text-xs text-muted-foreground">
-                  OpenStack Manager
+                  {t('navigation.openstackManager')}
                 </p>
               </div>
             )}
@@ -81,7 +86,7 @@ export function AppSidebar() {
 
         {/* Main Navigation */}
         <SidebarGroup>
-          <SidebarGroupLabel>Infrastructure</SidebarGroupLabel>
+          <SidebarGroupLabel>{t('navigation.infrastructure')}</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {mainItems.map((item) => (
@@ -100,7 +105,7 @@ export function AppSidebar() {
 
         {/* Management */}
         <SidebarGroup>
-          <SidebarGroupLabel>Management</SidebarGroupLabel>
+          <SidebarGroupLabel>{t('navigation.management')}</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {managementItems.map((item) => (
@@ -119,7 +124,7 @@ export function AppSidebar() {
 
         {/* System */}
         <SidebarGroup>
-          <SidebarGroupLabel>System</SidebarGroupLabel>
+          <SidebarGroupLabel>{t('navigation.system')}</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {systemItems.map((item) => (

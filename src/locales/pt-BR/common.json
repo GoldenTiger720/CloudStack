@@ -1,0 +1,104 @@
+{
+  "navigation": {
+    "dashboard": "Painel",
+    "instances": "Instâncias",
+    "networks": "Redes",
+    "storage": "Armazenamento",
+    "users": "Usuários",
+    "security": "Segurança",
+    "monitoring": "Monitoramento",
+    "auditLogs": "Logs de Auditoria",
+    "settings": "Configurações",
+    "infrastructure": "Infraestrutura",
+    "management": "Gerenciamento",
+    "system": "Sistema",
+    "cloudstack": "CloudStack",
+    "openstackManager": "Gerenciador OpenStack"
+  },
+  "dashboard": {
+    "title": "Painel",
+    "subtitle": "Visão geral da sua infraestrutura OpenStack",
+    "refresh": "Atualizar",
+    "quickCreate": "Criação Rápida",
+    "totalInstances": "Total de Instâncias",
+    "activeVirtualMachines": "Máquinas virtuais ativas",
+    "cpuUsage": "Uso de CPU",
+    "clusterAverage": "Média do cluster",
+    "memoryUsage": "Uso de Memória",
+    "totalRamUtilization": "Utilização total de RAM",
+    "storageUsed": "Armazenamento Usado",
+    "ofTotalStorage": "de {{total}} total",
+    "networks": "Redes",
+    "virtualNetworks": "Redes virtuais",
+    "activeUsers": "Usuários Ativos",
+    "loggedInUsers": "Usuários conectados",
+    "recentInstances": "Instâncias Recentes",
+    "viewAll": "Ver Todas",
+    "recentAlerts": "Alertas Recentes",
+    "active": "Ativo",
+    "resourceUsageTrends": "Tendências de Uso de Recursos",
+    "resourceUsageChartsMessage": "Gráficos de uso de recursos serão exibidos aqui",
+    "connectedToMonitoring": "Conectado aos dados de monitoramento"
+  },
+  "status": {
+    "running": "Executando",
+    "stopped": "Parado",
+    "pending": "Pendente",
+    "error": "Erro"
+  },
+  "alerts": {
+    "highCpuUsage": "Alto uso de CPU em {{server}}",
+    "diskSpaceLow": "Pouco espaço em disco no volume {{volume}}",
+    "networkLatencySpike": "Pico de latência de rede detectado",
+    "warning": "aviso",
+    "error": "erro"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "create": "Criar",
+    "close": "Fechar",
+    "confirm": "Confirmar",
+    "language": "Idioma",
+    "english": "English",
+    "portuguese": "Português (Brasil)",
+    "searchResources": "Buscar recursos..."
+  },
+  "pages": {
+    "instances": {
+      "title": "Instâncias",
+      "subtitle": "Gerencie suas máquinas virtuais"
+    },
+    "networks": {
+      "title": "Redes",
+      "subtitle": "Gerencie configurações de rede"
+    },
+    "storage": {
+      "title": "Armazenamento",
+      "subtitle": "Gerencie recursos de armazenamento"
+    },
+    "users": {
+      "title": "Usuários",
+      "subtitle": "Gerencie contas de usuário e permissões"
+    },
+    "security": {
+      "title": "Segurança",
+      "subtitle": "Configurações de segurança e monitoramento"
+    },
+    "monitoring": {
+      "title": "Monitoramento",
+      "subtitle": "Monitoramento avançado e métricas"
+    },
+    "auditLogs": {
+      "title": "Logs de Auditoria",
+      "subtitle": "Atividade do sistema e logs de alterações"
+    },
+    "settings": {
+      "title": "Configurações",
+      "subtitle": "Configuração e preferências da aplicação"
+    }
+  }
+}

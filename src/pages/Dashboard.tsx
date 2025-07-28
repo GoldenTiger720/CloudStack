@@ -15,52 +15,55 @@ import {
   Plus,
   RefreshCw
 } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 export default function Dashboard() {
+  const { t } = useTranslation()
+  
   const kpiData = [
     {
-      title: "Total Instances",
+      title: t('dashboard.totalInstances'),
       value: 142,
-      description: "Active virtual machines",
+      description: t('dashboard.activeVirtualMachines'),
       icon: Server,
       trend: { value: 12, positive: true },
       status: "success" as const
     },
     {
-      title: "CPU Usage",
+      title: t('dashboard.cpuUsage'),
       value: "68%",
-      description: "Cluster average",
+      description: t('dashboard.clusterAverage'),
       icon: Cpu,
       trend: { value: 5, positive: false },
       status: "warning" as const
     },
     {
-      title: "Memory Usage", 
+      title: t('dashboard.memoryUsage'), 
       value: "45%",
-      description: "Total RAM utilization",
+      description: t('dashboard.totalRamUtilization'),
       icon: MemoryStick,
       trend: { value: 2, positive: true },
       status: "success" as const
     },
     {
-      title: "Storage Used",
+      title: t('dashboard.storageUsed'),
       value: "2.3TB",
-      description: "of 4.5TB total",
+      description: t('dashboard.ofTotalStorage', { total: '4.5TB' }),
       icon: HardDrive,
       trend: { value: 8, positive: false },
       status: "default" as const
     },
     {
-      title: "Networks",
+      title: t('dashboard.networks'),
       value: 24,
-      description: "Virtual networks",
+      description: t('dashboard.virtualNetworks'),
       icon: Network,
       status: "success" as const
     },
     {
-      title: "Active Users",
+      title: t('dashboard.activeUsers'),
       value: 18,
-      description: "Logged in users",
+      description: t('dashboard.loggedInUsers'),
       icon: Users,
       status: "default" as const
     }
@@ -75,9 +78,9 @@ export default function Dashboard() {
   ]
 
   const alerts = [
-    { message: "High CPU usage on web-server-01", severity: "warning", time: "2 min ago" },
-    { message: "Disk space low on volume vol-001", severity: "error", time: "5 min ago" },
-    { message: "Network latency spike detected", severity: "warning", time: "10 min ago" },
+    { message: t('alerts.highCpuUsage', { server: 'web-server-01' }), severity: "warning", time: "2 min ago" },
+    { message: t('alerts.diskSpaceLow', { volume: 'vol-001' }), severity: "error", time: "5 min ago" },
+    { message: t('alerts.networkLatencySpike'), severity: "warning", time: "10 min ago" },
   ]
 
   return (
@@ -85,17 +88,17 @@ export default function Dashboard() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
-          <p className="text-muted-foreground">Overview of your OpenStack infrastructure</p>
+          <h1 className="text-3xl font-bold text-foreground">{t('dashboard.title')}</h1>
+          <p className="text-muted-foreground">{t('dashboard.subtitle')}</p>
         </div>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
             <RefreshCw className="w-4 h-4 mr-2" />
-            Refresh
+            {t('dashboard.refresh')}
           </Button>
           <Button size="sm" className="bg-gradient-primary hover:shadow-glow">
             <Plus className="w-4 h-4 mr-2" />
-            Quick Create
+            {t('dashboard.quickCreate')}
           </Button>
         </div>
       </div>
@@ -118,9 +121,9 @@ export default function Dashboard() {
             <CardTitle className="flex items-center justify-between">
               <span className="flex items-center gap-2">
                 <Server className="w-5 h-5 text-primary" />
-                Recent Instances
+                {t('dashboard.recentInstances')}
               </span>
-              <Button variant="ghost" size="sm">View All</Button>
+              <Button variant="ghost" size="sm">{t('dashboard.viewAll')}</Button>
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -149,10 +152,10 @@ export default function Dashboard() {
             <CardTitle className="flex items-center justify-between">
               <span className="flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-warning" />
-                Recent Alerts
+                {t('dashboard.recentAlerts')}
               </span>
               <Badge variant="destructive" className="text-xs">
-                3 Active
+                3 {t('dashboard.active')}
               </Badge>
             </CardTitle>
           </CardHeader>
@@ -168,7 +171,7 @@ export default function Dashboard() {
                     <div className="text-xs text-muted-foreground">{alert.time}</div>
                   </div>
                   <Badge variant={alert.severity === 'error' ? 'destructive' : 'outline'} className="text-xs">
-                    {alert.severity}
+                    {t(`alerts.${alert.severity}`)}
                   </Badge>
                 </div>
               ))}
@@ -182,15 +185,15 @@ export default function Dashboard() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Activity className="w-5 h-5 text-primary" />
-            Resource Usage Trends
+            {t('dashboard.resourceUsageTrends')}
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-64 bg-gradient-secondary rounded-lg flex items-center justify-center">
             <div className="text-center text-muted-foreground">
               <Activity className="w-12 h-12 mx-auto mb-4 opacity-50" />
-              <p>Resource usage charts will be displayed here</p>
-              <p className="text-sm">Connected to monitoring data</p>
+              <p>{t('dashboard.resourceUsageChartsMessage')}</p>
+              <p className="text-sm">{t('dashboard.connectedToMonitoring')}</p>
             </div>
           </div>
         </CardContent>

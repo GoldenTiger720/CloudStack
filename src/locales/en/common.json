@@ -1,0 +1,104 @@
+{
+  "navigation": {
+    "dashboard": "Dashboard",
+    "instances": "Instances",
+    "networks": "Networks",
+    "storage": "Storage",
+    "users": "Users",
+    "security": "Security",
+    "monitoring": "Monitoring",
+    "auditLogs": "Audit Logs",
+    "settings": "Settings",
+    "infrastructure": "Infrastructure",
+    "management": "Management",
+    "system": "System",
+    "cloudstack": "CloudStack",
+    "openstackManager": "OpenStack Manager"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Overview of your OpenStack infrastructure",
+    "refresh": "Refresh",
+    "quickCreate": "Quick Create",
+    "totalInstances": "Total Instances",
+    "activeVirtualMachines": "Active virtual machines",
+    "cpuUsage": "CPU Usage",
+    "clusterAverage": "Cluster average",
+    "memoryUsage": "Memory Usage",
+    "totalRamUtilization": "Total RAM utilization",
+    "storageUsed": "Storage Used",
+    "ofTotalStorage": "of {{total}} total",
+    "networks": "Networks",
+    "virtualNetworks": "Virtual networks",
+    "activeUsers": "Active Users",
+    "loggedInUsers": "Logged in users",
+    "recentInstances": "Recent Instances",
+    "viewAll": "View All",
+    "recentAlerts": "Recent Alerts",
+    "active": "Active",
+    "resourceUsageTrends": "Resource Usage Trends",
+    "resourceUsageChartsMessage": "Resource usage charts will be displayed here",
+    "connectedToMonitoring": "Connected to monitoring data"
+  },
+  "status": {
+    "running": "Running",
+    "stopped": "Stopped",
+    "pending": "Pending",
+    "error": "Error"
+  },
+  "alerts": {
+    "highCpuUsage": "High CPU usage on {{server}}",
+    "diskSpaceLow": "Disk space low on volume {{volume}}",
+    "networkLatencySpike": "Network latency spike detected",
+    "warning": "warning",
+    "error": "error"
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "close": "Close",
+    "confirm": "Confirm",
+    "language": "Language",
+    "english": "English",
+    "portuguese": "Português (Brasil)",
+    "searchResources": "Search resources..."
+  },
+  "pages": {
+    "instances": {
+      "title": "Instances",
+      "subtitle": "Manage your virtual machines"
+    },
+    "networks": {
+      "title": "Networks",
+      "subtitle": "Manage network configurations"
+    },
+    "storage": {
+      "title": "Storage",
+      "subtitle": "Manage storage resources"
+    },
+    "users": {
+      "title": "Users",
+      "subtitle": "Manage user accounts and permissions"
+    },
+    "security": {
+      "title": "Security",
+      "subtitle": "Security settings and monitoring"
+    },
+    "monitoring": {
+      "title": "Monitoring",
+      "subtitle": "Advanced monitoring and metrics"
+    },
+    "auditLogs": {
+      "title": "Audit Logs",
+      "subtitle": "System activity and change logs"
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "Application configuration and preferences"
+    }
+  }
+}

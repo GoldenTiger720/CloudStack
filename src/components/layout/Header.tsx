@@ -11,8 +11,12 @@ import {
   DropdownMenuTrigger 
 } from "@/components/ui/dropdown-menu"
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import { LanguageSelector } from "@/components/ui/language-selector"
+import { useTranslation } from "react-i18next"
 
 export function Header() {
+  const { t } = useTranslation()
+  
   return (
     <header className="h-16 border-b bg-card/80 backdrop-blur-sm flex items-center justify-between px-6 sticky top-0 z-40">
       {/* Left Section */}
@@ -23,7 +27,7 @@ export function Header() {
         <div className="relative w-96 max-w-sm">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
           <Input 
-            placeholder="Search resources..." 
+            placeholder={t('common.searchResources', 'Search resources...')} 
             className="pl-10 bg-background/60 border-border/60 focus:bg-background"
           />
         </div>
@@ -31,6 +35,8 @@ export function Header() {
 
       {/* Right Section */}
       <div className="flex items-center gap-4">
+        {/* Language Selector */}
+        <LanguageSelector />
         {/* Notifications */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

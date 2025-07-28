@@ -29,8 +29,10 @@ import {
   Trash2,
   Settings
 } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 export default function Instances() {
+  const { t } = useTranslation()
   const [searchTerm, setSearchTerm] = useState("")
 
   const instances = [
@@ -106,8 +108,8 @@ export default function Instances() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Instances</h1>
-          <p className="text-muted-foreground">Manage your virtual machines</p>
+          <h1 className="text-3xl font-bold text-foreground">{t('pages.instances.title')}</h1>
+          <p className="text-muted-foreground">{t('pages.instances.subtitle')}</p>
         </div>
         <Button className="bg-gradient-primary hover:shadow-glow">
           <Plus className="w-4 h-4 mr-2" />
